@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Çocuk Giyim | Özel Dikim & Kesim Atölyesi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        nasa: {
+                            coral: '#FF3366',
+                            yellow: '#FFB703',
+                            sky: '#0284C7',
+                            purple: '#7928CA',
+                            green: '#25D366', // WhatsApp Yeşili
+                            greenDark: '#128C7E',
+                            dark: '#0F172A',
+                            soft: '#FFF9F5'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(37, 211, 102, 0.4)' },
+                            '50%': { boxShadow: '0 0 25px rgba(37, 211, 102, 0.8)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            overflow-x: hidden;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#FF3366 1px, transparent 1px), radial-gradient(#7928CA 1px, #FAFAFA 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #FF3366 0%, #7928CA 50%, #0284C7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-shadow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -8px rgba(121, 40, 202, 0.18), 0 10px 15px -5px rgba(255, 51, 102, 0.12);
+        }
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 26s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF3366, #7928CA);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-nasa-coral selection:text-white">
+
+    <!-- ÜST DUYURU & HIZLI WHATSAPP ŞERİDİ -->
+    <div class="bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 text-white text-xs sm:text-sm py-2 px-4 border-b border-purple-900/50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 text-center sm:text-left">
+            <div class="flex items-center gap-2 mx-auto sm:mx-0">
+                <span class="bg-nasa-green text-slate-950 font-black px-2.5 py-0.5 rounded-full text-[11px] uppercase tracking-wider flex items-center gap-1 shadow">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Hattı Aktif
+                </span>
+                <span class="font-medium text-slate-200">Siz hayal edin, çocuğunuza özel tam istediğiniz şekilde dikelim!</span>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-xs">
+                <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20özel%20dikim%20ve%20kıyafet%20ayarlama%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="text-nasa-green hover:underline font-bold flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Hemen Ustaya Yazın
+                </a>
+                <span class="text-slate-500">|</span>
+                <span class="text-slate-300"><i class="fa-solid fa-scissors text-nasa-yellow mr-1"></i> Fason Kesim & Özel Dikim</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NASA LOGOSUNA DEVASA YER AYRILAN GÖRKEMLİ & MOBİL UYUMLU HEADER -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-pink-100/80 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24 md:h-28">
+                
+                <!-- NASA LOGO & MARKA ALANI -->
+                <a href="#anasayfa" class="flex items-center gap-2.5 sm:gap-4 group focus:outline-none">
+                    <div class="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-gradient-to-br from-nasa-coral via-nasa-purple to-nasa-sky p-0.5 rounded-2xl shadow-md group-hover:scale-105 transition duration-300 shrink-0">
+                        <div class="bg-white w-full h-full rounded-[14px] flex items-center justify-center relative overflow-hidden">
+                            <svg class="w-8 h-8 sm:w-12 sm:h-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 42C16 48 48 28 56 18" stroke="#FFB703" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 4"/>
+                                <path d="M32 8C32 8 45 18 45 36C45 42 39 48 32 48C25 48 19 42 19 36C19 18 32 8 32 8Z" fill="url(#nasaHeaderGrad)"/>
+                                <path d="M19 34L11 43L20 45L19 34Z" fill="#FF3366"/>
+                                <path d="M45 34L53 43L44 45L45 34Z" fill="#FF3366"/>
+                                <circle cx="32" cy="27" r="6" fill="white" stroke="#0F172A" stroke-width="2"/>
+                                <circle cx="30" cy="25" r="1.5" fill="#FF3366"/>
+                                <circle cx="34" cy="25" r="1.5" fill="#0284C7"/>
+                                <circle cx="30" cy="29" r="1.5" fill="#25D366"/>
+                                <circle cx="34" cy="29" r="1.5" fill="#FFB703"/>
+                                <path d="M28 48L32 59L36 48H28Z" fill="#FFB703"/>
+                                <defs>
+                                    <linearGradient id="nasaHeaderGrad" x1="19" y1="8" x2="45" y2="48" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#0284C7"/>
+                                        <stop offset="0.5" stop-color="#7928CA"/>
+                                        <stop offset="1" stop-color="#FF3366"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="absolute -bottom-1 -right-1 bg-nasa-yellow text-slate-950 text-[10px] sm:text-xs font-black px-1.5 py-0.5 rounded-full border border-white shadow">
+                            <i class="fa-solid fa-scissors"></i>
+                        </span>
+                    </div>
+
+                    <!-- İSİM VE ETİKET -->
+                    <div class="leading-tight">
+                        <div class="flex items-baseline gap-1.5 sm:gap-2">
+                            <span class="font-heading text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight brand-gradient">
+                                NASA
+                            </span>
+                            <span class="font-heading text-lg sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                                Çocuk Giyim
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="text-[9px] sm:text-xs font-extrabold tracking-wider uppercase text-white bg-slate-900 px-2 py-0.5 rounded flex items-center gap-1">
+                                <i class="fa-solid fa-wand-magic-sparkles text-nasa-yellow text-[10px]"></i> ÖZEL DİKİM ATÖLYESİ
+                            </span>
+                            <span class="hidden md:inline-block text-[11px] font-semibold text-nasa-purple">
+                                • İstediğiniz Şekilde Dikiyoruz
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SAĞ ALAN: MOBİL & MASAÜSTÜ WHATSAPP BUTONU -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <nav class="hidden lg:flex items-center gap-2 mr-2">
+                        <a href="#modeller" class="px-3.5 py-2 rounded-xl text-sm font-bold text-slate-700 hover:text-nasa-coral hover:bg-pink-50 transition">
+                            #CanlıModeller
+                        </a>
+                        <a href="#ozel-ayarlama" class="px-3.5 py-2 rounded-xl text-sm font-bold text-slate-700 hover:text-nasa-purple hover:bg-purple-50 transition">
+                            #KıyafetAyarlama
+                        </a>
+                        <a href="#atolye-hizmet" class="px-3.5 py-2 rounded-xl text-sm font-bold text-slate-700 hover:text-nasa-sky hover:bg-sky-50 transition">
+                            #KesimVeDikim
+                        </a>
+                    </nav>
+
+                    <!-- Ana WhatsApp Butonu (Mobilde Şık & Kompakt) -->
+                    <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20beğendiğim%20bir%20kıyafeti%20çocuğuma%20göre%20özel%20dikip%20ayarlatmak%20istiyorum." target="_blank" class="inline-flex items-center gap-2 bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-xs sm:text-base px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg sm:text-2xl"></i>
+                        <span class="leading-tight text-left">
+                            <span class="hidden sm:block text-[10px] font-semibold opacity-90 uppercase tracking-wider">Hızlı Sipariş & Özel Dikim</span>
+                            <span class="sm:inline">WhatsApp</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÖNE ÇIKARICI CANLI TREND HASHTAG BANDI (MOBİL & MASAÜSTÜ KESİNTİSİZ TICKER) -->
+        <div class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 py-2 border-y border-purple-800/60 overflow-hidden relative shadow-inner">
+            <div class="marquee-track flex items-center gap-3 text-xs sm:text-sm font-bold text-white select-none whitespace-nowrap">
+                <!-- 1. Grup -->
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-coral/25 border border-nasa-coral/50 text-pink-200">
+                    <i class="fa-solid fa-hashtag text-nasa-coral"></i> NASAÇocukGiyim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-yellow/20 border border-nasa-yellow/40 text-amber-200">
+                    <i class="fa-solid fa-hashtag text-nasa-yellow"></i> İstediğinizŞekildeDikim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-200">
+                    <i class="fa-solid fa-hashtag text-nasa-green"></i> BirebirÖlçüyeGöre
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-purple/30 border border-nasa-purple/50 text-purple-200">
+                    <i class="fa-solid fa-hashtag text-nasa-purple"></i> PrensesAbiye
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-200">
+                    <i class="fa-solid fa-hashtag text-rose-400"></i> KabarıkTütüTakım
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-500/40 text-sky-200">
+                    <i class="fa-solid fa-hashtag text-nasa-sky"></i> FotoğrafGönderDikelim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-200">
+                    <i class="fa-solid fa-hashtag text-amber-400"></i> FasonKumaşKesimi
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-200">
+                    <i class="fa-solid fa-hashtag text-emerald-400"></i> WhatsAppHızlıSipariş
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-200">
+                    <i class="fa-solid fa-hashtag text-purple-400"></i> 23NisanKostümleri
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/40 text-pink-200">
+                    <i class="fa-solid fa-hashtag text-pink-400"></i> AtölyedenDirekt
+                </span>
+
+                <!-- 2. Tekrar Grubu (Kesintisiz döngü için) -->
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-coral/25 border border-nasa-coral/50 text-pink-200">
+                    <i class="fa-solid fa-hashtag text-nasa-coral"></i> NASAÇocukGiyim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-yellow/20 border border-nasa-yellow/40 text-amber-200">
+                    <i class="fa-solid fa-hashtag text-nasa-yellow"></i> İstediğinizŞekildeDikim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-200">
+                    <i class="fa-solid fa-hashtag text-nasa-green"></i> BirebirÖlçüyeGöre
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-nasa-purple/30 border border-nasa-purple/50 text-purple-200">
+                    <i class="fa-solid fa-hashtag text-nasa-purple"></i> PrensesAbiye
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-200">
+                    <i class="fa-solid fa-hashtag text-rose-400"></i> KabarıkTütüTakım
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-500/40 text-sky-200">
+                    <i class="fa-solid fa-hashtag text-nasa-sky"></i> FotoğrafGönderDikelim
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-200">
+                    <i class="fa-solid fa-hashtag text-amber-400"></i> FasonKumaşKesimi
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-200">
+                    <i class="fa-solid fa-hashtag text-emerald-400"></i> WhatsAppHızlıSipariş
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-200">
+                    <i class="fa-solid fa-hashtag text-purple-400"></i> 23NisanKostümleri
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/40 text-pink-200">
+                    <i class="fa-solid fa-hashtag text-pink-400"></i> AtölyedenDirekt
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. BÜYÜK HERO ALANI: NASA & "İSTEDİĞİNİZ ŞEKİLDE AYARLARIZ" (#anasayfa) -->
+    <section id="anasayfa" class="relative pt-6 sm:pt-10 pb-12 sm:pb-16 lg:pt-16 lg:pb-24 bg-pattern overflow-hidden">
+        <!-- Işık Efektleri -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+                
+                <!-- Sol Metin Alanı -->
+                <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+                    
+                    <!-- Öne Çıkaran Hashtag Rozetleri (Hero Üstü) -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white shadow-sm border border-pink-200 text-xs font-extrabold text-nasa-coral">
+                            <i class="fa-solid fa-hashtag text-[10px]"></i> ÖzelÖlçüDikim
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white shadow-sm border border-purple-200 text-xs font-extrabold text-nasa-purple">
+                            <i class="fa-solid fa-hashtag text-[10px]"></i> İstediğinGibiAyarlayalım
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white shadow-sm border border-emerald-200 text-xs font-extrabold text-emerald-700">
+                            <i class="fa-solid fa-hashtag text-[10px]"></i> FotoğrafAtFiyatAl
+                        </span>
+                    </div>
+
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight sm:leading-[1.12]">
+                        <span class="brand-gradient">Siz Hayal Edin;</span><br>
+                        Kıyafeti Tam İstediğiniz Şekilde Dikip Ayarlayalım!
+                    </h1>
+
+                    <p class="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                        <strong>NASA Çocuk Giyim</strong> kendi bünyesindeki profesyonel kesim ve dikim atölyesiyle hizmet verir. Beğendiğiniz elbisenin rengini, kol boyunu, tütüsünün kabarıklığını ya da çocuğunuzun tam beden ölçüsünü bize söyleyin; <strong>birebir istediğiniz şekilde hazırlayalım!</strong>
+                    </p>
+
+                    <!-- Kalite Güvence Rozetleri (Mobilde Ferah) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1 sm:pt-2">
+                        <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-pink-50 text-nasa-coral flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-heading font-bold text-xs text-slate-900">Kişiye Özel Ayarlama</h4>
+                                <p class="text-[11px] text-slate-500">#RenkBoyTülSeçimi</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 text-nasa-purple flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-heading font-bold text-xs text-slate-900">Tam Vücut Ölçüsü</h4>
+                                <p class="text-[11px] text-slate-500">#KusursuzKalıp</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-heading font-bold text-xs text-slate-900">Fotoğraf Atın Yeter</h4>
+                                <p class="text-[11px] text-slate-500">#WhatsAppAnındaFiyat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Büyük Aksiyon Butonları (Mobilde Tam Genişlikte Ergonomik) -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-3">
+                        <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20istediğim%20kıyafetin%20fotoğrafını%20atıp%20özel%20dikim%20fiyatı%20öğrenmek%20istiyorum." target="_blank" class="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-extrabold text-base sm:text-lg shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all animate-pulse-glow">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Model Gönder & Fiyat Al</span>
+                        </a>
+
+                        <a href="#modeller" class="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white text-slate-800 border-2 border-slate-300 hover:border-nasa-coral font-heading font-bold text-sm sm:text-base shadow-sm hover:shadow-md transition">
+                            <i class="fa-solid fa-camera text-nasa-coral"></i>
+                            <span>Canlı Modellerimizi İncele</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sağ: 3 GERÇEK FOTOĞRAFLI VİTRİN -->
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-gradient-to-tr from-nasa-coral via-nasa-purple to-nasa-sky p-2 rounded-[28px] sm:rounded-[32px] shadow-2xl">
+                        <div class="bg-white rounded-[22px] sm:rounded-[26px] p-3.5 sm:p-5 space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                                <span class="font-heading font-extrabold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
+                                    <i class="fa-solid fa-scissors text-nasa-coral"></i> Atölyemizden Canlı Çekimler
+                                </span>
+                                <span class="text-[10px] sm:text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 sm:px-2.5 py-0.5 rounded-full">
+                                    #BirebirKendiDikimimiz
+                                </span>
+                            </div>
+
+                            <!-- 3 Gerçek Fotoğraf Önizleme -->
+                            <div class="grid grid-cols-3 gap-2 sm:gap-2.5">
+                                <div onclick="openLightbox('nasagiyim.jpg', 'Zarif Çiçek Kemerli Beyaz Prenses Abiye')" class="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer shadow-sm hover:ring-2 hover:ring-nasa-coral transition">
+                                    <img src="nasagiyim.jpg" alt="Beyaz Prenses Abiye" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-[10px] font-bold">
+                                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Büyüt
+                                    </div>
+                                    <span class="absolute bottom-1 inset-x-1 bg-black/75 text-white text-[8px] sm:text-[9px] font-bold py-0.5 text-center rounded">
+                                        #PrensesAbiye
+                                    </span>
+                                </div>
+
+                                <div onclick="openLightbox('nasagiyim2.jpg', 'Kat Kat Etekli Fermuarlı Mor Çocuk Elbisesi')" class="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer shadow-sm hover:ring-2 hover:ring-nasa-purple transition">
+                                    <img src="nasagiyim2.jpg" alt="Mor Kat Kat Elbise" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-[10px] font-bold">
+                                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Büyüt
+                                    </div>
+                                    <span class="absolute bottom-1 inset-x-1 bg-purple-900/85 text-white text-[8px] sm:text-[9px] font-bold py-0.5 text-center rounded">
+                                        #MorElbise
+                                    </span>
+                                </div>
+
+                                <div onclick="openLightbox('nasagiyim3.jpg', 'Kırmızı Kabarık Tütü & Karakter Baskılı Tişört')" class="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer shadow-sm hover:ring-2 hover:ring-rose-500 transition">
+                                    <img src="nasagiyim3.jpg" alt="Kırmızı Tütü Takım" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-[10px] font-bold">
+                                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Büyüt
+                                    </div>
+                                    <span class="absolute bottom-1 inset-x-1 bg-rose-900/85 text-white text-[8px] sm:text-[9px] font-bold py-0.5 text-center rounded">
+                                        #TütüTakım
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="p-2.5 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                                <p class="text-[11px] sm:text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-check text-nasa-green"></i> İster Aynısı, İster Farklı Renk & Detay!
+                                </p>
+                                <p class="text-[10px] sm:text-[11px] text-slate-500 leading-snug">
+                                    Bu modellerin kumaşını, rengini veya tütüsünü isteğinize göre değiştirebilir, çocuğunuzun tam ölçüsüne uyarlayabiliriz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. "İSTEDİĞİNİZ ŞEKİLDE AYARLARIZ" KALİTELİ ATÖLYE HİZMETİ (#ozel-ayarlama) -->
+    <section id="ozel-ayarlama" class="py-12 sm:py-16 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+                <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-nasa-purple bg-purple-50 px-3.5 py-1 rounded-full">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> #NASAÖzelDikimGüvencesi
+                </span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-slate-900">
+                    Kıyafeti Çocuğunuza Göre Nasıl Ayarlıyoruz?
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-base leading-relaxed">
+                    Standart kalıplara sığmak zorunda değilsiniz. NASA Çocuk Giyim atölyesinde her parça çocuğunuzun konforu ve mutluluğu için özenle şekillenir.
+                </p>
+            </div>
+
+            <!-- Mobilde 2x2, Masaüstünde 4'lü Kompakt Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                <!-- Adım 1 -->
+                <div class="bg-pink-50/60 border border-pink-100 rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 text-center space-y-2 sm:space-y-3 relative flex flex-col justify-between">
+                    <div>
+                        <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-nasa-coral text-white font-heading font-black text-sm sm:text-lg flex items-center justify-center mx-auto shadow-md">
+                            1
+                        </span>
+                        <span class="inline-block mt-2 text-[10px] sm:text-xs font-black text-nasa-coral uppercase tracking-wider">#ModeliniSeç</span>
+                        <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug mt-1">Fotoğraf veya Model Gönder</h3>
+                        <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mt-1">
+                            Canlı modellerimizden seçin veya internetten beğendiğiniz resmi WhatsApp'tan atın.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Adım 2 -->
+                <div class="bg-purple-50/60 border border-purple-100 rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 text-center space-y-2 sm:space-y-3 relative flex flex-col justify-between">
+                    <div>
+                        <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-nasa-purple text-white font-heading font-black text-sm sm:text-lg flex items-center justify-center mx-auto shadow-md">
+                            2
+                        </span>
+                        <span class="inline-block mt-2 text-[10px] sm:text-xs font-black text-nasa-purple uppercase tracking-wider">#RenkVeDetay</span>
+                        <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug mt-1">İstediğin Detayı Belirt</h3>
+                        <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mt-1">
+                            Renk, kol boyu veya tül kabarıklığı gibi detayları zevkinize göre ayarlayalım.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Adım 3 -->
+                <div class="bg-sky-50/60 border border-sky-100 rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 text-center space-y-2 sm:space-y-3 relative flex flex-col justify-between">
+                    <div>
+                        <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-nasa-sky text-white font-heading font-black text-sm sm:text-lg flex items-center justify-center mx-auto shadow-md">
+                            3
+                        </span>
+                        <span class="inline-block mt-2 text-[10px] sm:text-xs font-black text-nasa-sky uppercase tracking-wider">#TamVücutKalıbı</span>
+                        <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug mt-1">Ölçüye Göre Kalıp & Kesim</h3>
+                        <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mt-1">
+                            Çocuğunuzun ölçüsüne göre kalıp çıkarıp hassas motorlu kesimle hazırlıyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Adım 4 -->
+                <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 text-center space-y-2 sm:space-y-3 relative flex flex-col justify-between">
+                    <div>
+                        <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-nasa-green text-white font-heading font-black text-sm sm:text-lg flex items-center justify-center mx-auto shadow-md">
+                            4
+                        </span>
+                        <span class="inline-block mt-2 text-[10px] sm:text-xs font-black text-nasa-green uppercase tracking-wider">#HızlıTeslimat</span>
+                        <h3 class="font-heading font-bold text-xs sm:text-base text-slate-900 leading-snug mt-1">Hızlıca Kapınıza Gelsin</h3>
+                        <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mt-1">
+                            Kalite kontrol ve ütü sonrası tüm Türkiye'ye kargolanır ya da atölyeden teslim edilir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doğrudan WhatsApp Butonu -->
+            <div class="mt-8 sm:mt-10 text-center">
+                <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20çocuğuma%20özel%20ölçüde%20kıyafet%20diktirmek%20istiyorum.%20Bilgi%20verir%20misiniz?" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Özel Dikim İçin WhatsApp'tan Bize Danışın</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SADECE GERÇEK ATÖLYE ÜRÜNLERİ VİTRİNİ (#modeller) -->
+    <section id="modeller" class="py-12 sm:py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-200 pb-6">
+            <div>
+                <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-nasa-coral bg-pink-50 px-3 py-1 rounded-full mb-2">
+                    <i class="fa-solid fa-camera"></i> #CanlıAtölyeÇekimleri • Birebir Dikim
+                </span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-slate-900">
+                    Öne Çıkan Gerçek Atölye Modellerimiz
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-base mt-1">
+                    Gördüğünüz her model bizzat atölyemizde dikilmiştir. İstediğiniz bedende, renkte veya özel ölçüde hemen WhatsApp üzerinden sipariş verebilirsiniz.
+                </p>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> #WhatsAppTekTıklaSipariş
+                </span>
+            </div>
+        </div>
+
+        <!-- ÖNE ÇIKARICI TREND HASHTAG FİLTRE BUTONLARI (MOBİLDE DOKUNMATİK YATAY KAYDIRMA) -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-6 sm:mb-8 text-xs font-bold">
+            <button onclick="filterModel('all', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-slate-900 text-white shadow-sm hover:scale-105 transition">
+                #TümModeller (3)
+            </button>
+            <button onclick="filterModel('abiye', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-pink-50 border border-pink-200 text-nasa-coral hover:bg-pink-100 transition">
+                #BeyazPrensesAbiye
+            </button>
+            <button onclick="filterModel('mor', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-nasa-purple hover:bg-purple-100 transition">
+                #MorKatKatElbise
+            </button>
+            <button onclick="filterModel('tutu', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 text-rose-600 hover:bg-rose-100 transition">
+                #KırmızıTütüTakım
+            </button>
+            <button onclick="filterModel('all', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 hover:bg-amber-100 transition">
+                #KişiyeÖzelÖlçü
+            </button>
+            <button onclick="filterModel('all', event)" class="model-tag-btn shrink-0 px-4 py-2 rounded-full bg-sky-50 border border-sky-200 text-sky-700 hover:bg-sky-100 transition">
+                #FasonKesimDikim
+            </button>
+        </div>
+
+        <!-- 3 GERÇEK MODELİN BÜYÜK VE ZENGİN KARTLARI -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+            
+            <!-- MODEL 1: Beyaz Prenses Abiye (nasagiyim.jpg) -->
+            <div data-category="abiye" class="model-card bg-white rounded-3xl sm:rounded-[32px] border border-slate-200/90 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group">
+                <!-- Fotoğraf Alanı -->
+                <div class="relative overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer" onclick="openLightbox('nasagiyim.jpg', 'Zarif Çiçek Kemerli Beyaz Prenses Abiye & Mezuniyet Elbisesi')">
+                    <img src="nasagiyim.jpg" alt="Beyaz Prenses Abiye" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3.5 left-3.5 bg-nasa-coral text-white text-[11px] sm:text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-hashtag text-[10px]"></i> ÖzelDikimAbiye
+                    </div>
+                    <div class="absolute top-3.5 right-3.5 bg-white/95 text-slate-800 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5">
+                        <i class="fa-solid fa-magnifying-glass-plus text-nasa-coral"></i> Büyüt
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent p-4 sm:p-5 text-white">
+                        <span class="text-[10px] sm:text-[11px] font-bold text-nasa-yellow uppercase tracking-wider block">#BeyazPrensesKombini</span>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold leading-tight mt-0.5">Zarif Çiçek Kemerli Beyaz Prenses Abiye</h3>
+                    </div>
+                </div>
+
+                <!-- Açıklama ve WhatsApp Aksiyonu -->
+                <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                            Beli 3 boyutlu el işçiliği çiçek motifli ve incili, manşetleri dantel güpürlü şifon/tüllü prenses abiye elbise. Düğün, mezuniyet, kutlama ve özel günler için çocuğunuzun tam ölçüsüne göre dikiyoruz.
+                        </p>
+                        <div class="bg-pink-50/70 p-2.5 sm:p-3 rounded-xl border border-pink-100 text-[11px] text-nasa-coral font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-sliders"></i> #Pudra #Ekru #Kırmızı ve istenen renkte dikilir!
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 border-t border-slate-100 pt-3 sm:pt-4">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-slate-500 font-semibold">Beden / Ölçü:</span>
+                            <span class="font-bold text-nasa-purple">4 - 13 Yaş & Özel Ölçü Dikim</span>
+                        </div>
+                        
+                        <!-- WhatsApp Sipariş Butonu -->
+                        <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20'Beyaz%20Prenses%20Abiye'%20modelinizi%20çocuğum%20için%20özel%20diktirmek%20istiyorum." target="_blank" class="w-full py-3 sm:py-3.5 px-4 rounded-xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
+                            <span>Bu Modeli WhatsApp'tan İste</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODEL 2: Mor Fermuarlı Kat Kat Elbise (nasagiyim2.jpg) -->
+            <div data-category="mor" class="model-card bg-white rounded-3xl sm:rounded-[32px] border border-slate-200/90 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group">
+                <!-- Fotoğraf Alanı -->
+                <div class="relative overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer" onclick="openLightbox('nasagiyim2.jpg', 'Kat Kat Etekli Fermuarlı Mor Çocuk Elbisesi & Şal Takımı')">
+                    <img src="nasagiyim2.jpg" alt="Mor Kat Kat Elbise" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3.5 left-3.5 bg-nasa-purple text-white text-[11px] sm:text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-hashtag text-[10px]"></i> FermuarlıKatKat
+                    </div>
+                    <div class="absolute top-3.5 right-3.5 bg-white/95 text-slate-800 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5">
+                        <i class="fa-solid fa-magnifying-glass-plus text-nasa-purple"></i> Büyüt
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent p-4 sm:p-5 text-white">
+                        <span class="text-[10px] sm:text-[11px] font-bold text-nasa-yellow uppercase tracking-wider block">#MorKatKatElbise</span>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold leading-tight mt-0.5">Kat Kat Etekli Fermuarlı Çocuk Elbisesi</h3>
+                    </div>
+                </div>
+
+                <!-- Açıklama ve WhatsApp Aksiyonu -->
+                <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                            Önden boydan pratik fermuarlı, dökümlü basamaklı kat etek detayı ve lastikli bilekler. Nefes alan, terletmeyen kumaş. Hem namaz elbisesi hem de özel gün ve günlük şıklık için ideal rahat kalıp.
+                        </p>
+                        <div class="bg-purple-50/70 p-2.5 sm:p-3 rounded-xl border border-purple-100 text-[11px] text-nasa-purple font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-sliders"></i> #TamBoyVeGenişlik Çocuğunuzun boyuna göre dikilir!
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 border-t border-slate-100 pt-3 sm:pt-4">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-slate-500 font-semibold">Beden / Ölçü:</span>
+                            <span class="font-bold text-nasa-purple">4 - 13 Yaş Arası</span>
+                        </div>
+                        
+                        <!-- WhatsApp Sipariş Butonu -->
+                        <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20'Mor%20Fermuarlı%20Kat%20Kat%20Elbise'%20hakkında%20bilgi%20ve%20sipariş%20vermek%20istiyorum." target="_blank" class="w-full py-3 sm:py-3.5 px-4 rounded-xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
+                            <span>Bu Modeli WhatsApp'tan İste</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODEL 3: Kırmızı Kabarık Tütü Takım (nasagiyim3.jpg) -->
+            <div data-category="tutu" class="model-card bg-white rounded-3xl sm:rounded-[32px] border border-slate-200/90 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group">
+                <!-- Fotoğraf Alanı -->
+                <div class="relative overflow-hidden aspect-[3/4] bg-slate-100 cursor-pointer" onclick="openLightbox('nasagiyim3.jpg', 'Kırmızı Kabarık Tütü Etek & Baskılı Tişört Takımı')">
+                    <img src="nasagiyim3.jpg" alt="Kırmızı Tütü Takım" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3.5 left-3.5 bg-rose-600 text-white text-[11px] sm:text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                        <i class="fa-solid fa-hashtag text-[10px]"></i> ÇokSatanTütüSet
+                    </div>
+                    <div class="absolute top-3.5 right-3.5 bg-white/95 text-slate-800 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5">
+                        <i class="fa-solid fa-magnifying-glass-plus text-rose-500"></i> Büyüt
+                    </div>
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent p-4 sm:p-5 text-white">
+                        <span class="text-[10px] sm:text-[11px] font-bold text-nasa-yellow uppercase tracking-wider block">#KırmızıTütüTakım</span>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold leading-tight mt-0.5">Kabarık Tütü Etek & Figürlü Tişört Seti</h3>
+                    </div>
+                </div>
+
+                <!-- Açıklama ve WhatsApp Aksiyonu -->
+                <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                            Çok katlı kabarık yumuşak kırmızı tütü etek ve göğsünde minik sevimli figür baskılı pamuklu beyaz tişört. 23 Nisan, okul gösterisi, doğum günü ve konsept fotoğraf çekimleri için vazgeçilmez bir takım!
+                        </p>
+                        <div class="bg-rose-50/70 p-2.5 sm:p-3 rounded-xl border border-rose-100 text-[11px] text-rose-600 font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-sliders"></i> #23Nisan #OkulGösterisi Toplu siparişe özel dikilir!
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 border-t border-slate-100 pt-3 sm:pt-4">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-slate-500 font-semibold">Beden / Ölçü:</span>
+                            <span class="font-bold text-nasa-purple">2 - 11 Yaş Arası</span>
+                        </div>
+                        
+                        <!-- WhatsApp Sipariş Butonu -->
+                        <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20'Kırmızı%20Tütü%20Takım'%20siparişi%20vermek%20veya%20özel%20renk%20sormak%20istiyorum." target="_blank" class="w-full py-3 sm:py-3.5 px-4 rounded-xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
+                            <span>Bu Modeli WhatsApp'tan İste</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FARKLI BİR MODEL İSTEYENLER İÇİN ÖZEL ÇAĞRI KARTI -->
+        <div class="mt-8 sm:mt-12 bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="inline-flex items-center gap-1.5 text-xs font-bold text-nasa-yellow uppercase tracking-wider">
+                    <i class="fa-solid fa-camera"></i> #İstediğinKıyafetinFotoğrafınıGönder
+                </span>
+                <h3 class="font-heading text-xl sm:text-3xl font-extrabold">
+                    Aklında Başka Bir Model Mi Var?
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+                    Pinterest'te, Instagram'da veya bir dergide gördüğünüz kıyafetin ekran görüntüsünü bize WhatsApp'tan atın. Kalıbını çıkarıp çocuğunuzun tam ölçüsüne dikelim.
+                </p>
+            </div>
+            <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20elimde%20dikilmesini%20istediğim%20bir%20çocuk%20kıyafeti%20fotoğrafı%20var.%20Fiyat%20ve%20detay%20alabilir%20miyim?" target="_blank" class="w-full md:w-auto shrink-0 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-extrabold text-sm sm:text-base shadow-lg transition flex items-center justify-center gap-2.5">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Fotoğraf At & Fiyat Al</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 4. ATÖLYE HİZMETLERİ & KESİMHANE (#atolye-hizmet) -->
+    <!-- (10 adetli slider ve gereksiz formlar tamamen temizlendi, doğrudan WhatsApp odaklı!) -->
+    <section id="atolye-hizmet" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-black uppercase tracking-wider text-nasa-yellow bg-white/10 px-3.5 py-1 rounded-full inline-block">
+                    #NasaKesimhane • #NasaDikimhane
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold">
+                    Fason Kumaş Kesimi & Seri Dikim Atölyesi
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Sadece tekil özel dikim değil; butik markalar, toptancılar, anaokulları ve gösteri grupları için profesyonel fason kesim ve dikiş işçiliği sunuyoruz.
+                </p>
+            </div>
+
+            <!-- 3 Net Atölye Hizmeti -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- 1 -->
+                <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-nasa-yellow/20 text-nasa-yellow flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white">Fason Kumaş Kesimi & Pastal</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Kendi kumaşınızı getirin, sıfır fire ve milimetrik motorlu kesimle pastalınızı kesip bedenlerine göre tasnif edelim.
+                    </p>
+                    <a href="https://wa.me/905000000000?text=Merhaba,%20fason%20kumaş%20kesimi%20ve%20pastal%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-nasa-yellow hover:underline">
+                        <span>Kesim İçin WhatsApp'tan Yazın</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-nasa-coral/20 text-nasa-coral flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white">Seri & Butik Fason Dikim</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Çocuk elbiseleri, eşofman takımları, tütüler ve tişörtler için temiz overlok, reçme ve düz dikiş işçiliği.
+                    </p>
+                    <a href="https://wa.me/905000000000?text=Merhaba,%20seri%20veya%20butik%20fason%20dikim%20hakkında%20görüşmek%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-nasa-coral hover:underline">
+                        <span>Dikim İçin WhatsApp'tan Yazın</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-nasa-sky/20 text-nasa-sky flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white">Okul, Gösteri & 23 Nisan Kostümleri</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Sınıf veya anaokulu gösterileri için aynı renk ve modelde bir örnek etek, elbise veya takım dikimi.
+                    </p>
+                    <a href="https://wa.me/905000000000?text=Merhaba,%20okul%20gösterisi%20/%2023%20Nisan%20kostümü%20dikimi%20için%20fiyat%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-nasa-sky hover:underline">
+                        <span>Gösteri Grubu İçin Yazın</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- WhatsApp Hızlı İletişim Bandı -->
+            <div class="text-center bg-slate-800/60 border border-slate-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-left">
+                    <h4 class="font-heading font-bold text-lg text-white">Toplu veya Tekil İşleriniz İçin</h4>
+                    <p class="text-xs text-slate-400">Model detayını ve tahmini adedinizi atın, anında fiyat ve termin verelim.</p>
+                </div>
+                <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20atölyenizde%20yaptırmak%20istediğim%20bir%20kesim/dikim%20işi%20var." target="_blank" class="px-6 py-3 rounded-xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-sm shadow transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Atölye Ustasına WhatsApp'tan Danış</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 pt-12 pb-24 md:pb-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-900 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="font-heading text-3xl font-extrabold text-white">NASA</span>
+                        <span class="font-heading text-2xl font-bold text-slate-300">Çocuk Giyim</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1">Özel Dikim, Kıyafet Ayarlama & Fason Kesim Atölyesi</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs">
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#NASAÇocukGiyim</span>
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#İstediğinŞekildeDikim</span>
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#ÖzelÖlçüAbiye</span>
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#KabarıkTütü</span>
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#FasonKesim</span>
+                    <span class="bg-slate-900 px-3 py-1.5 rounded-lg text-slate-300">#FotoğrafGönderDikelim</span>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-4">
+                <p>© 2025 NASA Çocuk Giyim & Dikiş Atölyesi. Tüm hakları saklıdır.</p>
+                <a href="https://wa.me/905000000000" target="_blank" class="text-nasa-green hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Destek Hattı
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX / GÖRSEL BÜYÜTEÇ MODALI -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-4" onclick="closeLightbox(event)">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
+            <div class="relative bg-slate-100 flex items-center justify-center max-h-[70vh] overflow-hidden">
+                <img id="lightboxImage" src="" alt="NASA Çocuk Giyim Ürün" class="w-full h-auto max-h-[70vh] object-contain">
+                <button onclick="closeLightboxDirect()" class="absolute top-3.5 right-3.5 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center transition shadow">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-5 sm:p-6 bg-white space-y-3 sm:space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-nasa-coral bg-pink-50 px-3 py-1 rounded-full">
+                        #AtölyeCanlıÇekim
+                    </span>
+                    <span class="text-[11px] sm:text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                        #İstediğinizŞekildeAyarlanır
+                    </span>
+                </div>
+                <h3 id="lightboxTitle" class="font-heading text-lg sm:text-xl font-bold text-slate-900"></h3>
+                <p id="lightboxDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Bu modeli beğendiyseniz; rengini, kol ve etek boyunu çocuğunuzun tam ölçüsüne göre değiştirebiliriz.
+                </p>
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-100">
+                    <button onclick="orderFromLightbox()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-nasa-green hover:bg-emerald-600 text-white font-heading font-bold text-sm shadow transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Bu Modeli WhatsApp'tan İste</span>
+                    </button>
+                    <button onclick="closeLightboxDirect()" class="text-xs text-slate-400 hover:text-slate-600 underline">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBİL İÇİN SABİT HIZLI AKSİYON BARI (Sadece Mobilde Ekranın Altında Sabit) -->
+    <div class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 py-2 px-3 shadow-[0_-8px_25px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2.5 md:hidden">
+        <a href="#modeller" class="flex flex-col items-center justify-center text-slate-700 hover:text-nasa-coral py-1 px-2 shrink-0">
+            <i class="fa-solid fa-camera text-lg text-nasa-coral"></i>
+            <span class="text-[10px] font-bold mt-0.5">#Modeller</span>
+        </a>
+        <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20çocuğuma%20özel%20kıyafet%20dikimi%20ve%20ayarlama%20fiyatı%20öğrenmek%20istiyorum." target="_blank" class="flex-1 bg-nasa-green hover:bg-emerald-600 text-white font-heading font-extrabold text-xs sm:text-sm py-2.5 px-3 rounded-xl shadow-md flex items-center justify-center gap-2 animate-pulse-glow">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp ile Fiyat Al</span>
+        </a>
+        <a href="#ozel-ayarlama" class="flex flex-col items-center justify-center text-slate-700 hover:text-nasa-purple py-1 px-2 shrink-0">
+            <i class="fa-solid fa-scissors text-lg text-nasa-purple"></i>
+            <span class="text-[10px] font-bold mt-0.5">#Nasıl?</span>
+        </a>
+    </div>
+
+    <!-- MASAÜSTÜ SABİT WHATSAPP BUTONU (Sadece Masaüstünde Sağ Altta) -->
+    <a href="https://wa.me/905000000000?text=Merhaba%20NASA%20Çocuk%20Giyim,%20istediğim%20kıyafeti%20çocuğuma%20göre%20özel%20dikip%20ayarlatmak%20istiyorum." target="_blank" class="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-3 bg-nasa-green hover:bg-emerald-600 text-white pl-4 pr-6 py-3.5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow" title="WhatsApp ile Yazın">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <div class="text-left leading-tight">
+            <span class="block text-[10px] font-bold uppercase tracking-wider opacity-90">Kıyafetini Ayarlayalım</span>
+            <span class="font-heading font-extrabold text-sm sm:text-base">WhatsApp'tan Yaz</span>
+        </div>
+    </a>
+
+    <!-- JAVASCRIPT: LIGHTBOX, HASHTAG FİLTRELEME & ETKİLEŞİM -->
+    <script>
+        let currentModalProductTitle = "";
+
+        function openLightbox(imgSrc, title) {
+            currentModalProductTitle = title;
+            document.getElementById('lightboxImage').src = imgSrc;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxModal').classList.remove('hidden');
+        }
+
+        function closeLightbox(e) {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        function closeLightboxDirect() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        function orderFromLightbox() {
+            const msg = encodeURIComponent(`Merhaba NASA Çocuk Giyim, sitede gördüğüm "${currentModalProductTitle}" modelini çocuğum için özel dikip ayarlatmak istiyorum.`);
+            window.open(`https://wa.me/905000000000?text=${msg}`, '_blank');
+            closeLightboxDirect();
+        }
+
+        // Hashtag Filtreleme Fonksiyonu
+        function filterModel(category, event) {
+            const cards = document.querySelectorAll('.model-card');
+            const buttons = document.querySelectorAll('.model-tag-btn');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-white', 'text-slate-700');
+                event.currentTarget.classList.add('bg-slate-900', 'text-white');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
